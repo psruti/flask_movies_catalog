@@ -1,0 +1,5 @@
+# ignore the following files
+**.idea/
+.idea/
+*.pyc
+*/__pychache__/

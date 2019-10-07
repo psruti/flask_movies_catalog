@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+ {% block content%}
+ <div class = "container production">
+    <h4> Movies by {{ production.name }} </h4>
+    <ol>
+        {% for movies in publisher_movies %}
+            <li type="1">
+                {{movies.name }} by {{ movies.cast }}
+            </li>
+        {% endfor %}
+    </ol>
+ </div>>
+{% endblock content %}

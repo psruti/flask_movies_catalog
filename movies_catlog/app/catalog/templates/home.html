@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="container movies">
+        <div class="row">
+        {% for movie in movies %}
+           <div class ="col-md-4">
+           <img src ="static/img/{{movie.image}}" alt ="movie-img" height="200" width ="190" class="img-rounded">
+            <h4> Name: {{ movie.name }} </h4>
+            <p> Director: {{ movie.directors }} </p>
+            <p> Cast: {{ movie.cast }} </p>
+            <p> Average Rating: {{ movie.avg_rating }} </p>
+               <p><a href="{{ url_for('main.display_production', production_id=movie.prod_id) }}">Production ID: {{ movie.prod_id }}</a></p>
+               <span class="label label-success"><a href="{{ url_for('main.create_movie', prod_id=movie.prod_id) }}" style="color: floralwhite"> create </a></span>
+             <span class="label label-primary"><a href="{{ url_for('main.edit_movie', movie_id=movie.id) }}" style="color: floralwhite"> edit </a></span>
+             <span class="label label-info"><a href="{{ url_for('main.delete_movie', movie_id=movie.id) }}" style="color: floralwhite"> delete </a></span>
+            <br>
+           </div>
+         {%endfor%}
+        </div>
+    </div>
+{% endblock content %}
